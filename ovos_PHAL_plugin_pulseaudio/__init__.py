@@ -7,9 +7,24 @@ from json_database import JsonConfigXDG
 from mycroft_bus_client import Message
 from ovos_plugin_manager.phal import PHALPlugin
 from ovos_utils.sound import play_audio
+from ovos_utils.system import find_executable, is_process_running
+
+
+class PulseAudioValidator:
+    @staticmethod
+    def validate(config=None):
+        """ this method is called before loading the plugin.
+        If it returns False the plugin is not loaded.
+        This allows a plugin to run platform checks"""
+        # any aliases we need here ?
+        execs = ["pulseaudio"]
+        return any((find_executable(e) or is_process_running(e)
+                    for e in execs))
 
 
 class PulseAudioVolumeControlPlugin(PHALPlugin):
+    validator = PulseAudioValidator
+
     def __init__(self, bus=None, config=None):
         super().__init__(bus=bus, name="ovos-PHAL-plugin-pulseaudio", config=config)
         self.settings = JsonConfigXDG(self.name, subfolder="OpenVoiceOS")
