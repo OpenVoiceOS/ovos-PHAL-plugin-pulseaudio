@@ -4,7 +4,7 @@ import subprocess
 from os.path import join, dirname
 
 from json_database import JsonConfigXDG
-from mycroft_bus_client import Message
+from ovos_bus_client import Message
 from ovos_plugin_manager.phal import PHALPlugin
 from ovos_utils.sound import play_audio
 from ovos_utils.system import find_executable, is_process_running
