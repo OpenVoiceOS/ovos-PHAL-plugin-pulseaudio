@@ -1,5 +1,9 @@
 # Changelog
 
+## [V0.0.2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.2) (2023-02-24)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.2a1...V0.0.2)
+
 ## [V0.0.2a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.2a1) (2023-02-24)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/dd5fc0e4279a68664fa0e01a9c9658255920a66e...V0.0.2a1)
