@@ -6,7 +6,6 @@ from os.path import join, dirname
 from json_database import JsonConfigXDG
 from ovos_bus_client import Message
 from ovos_plugin_manager.phal import PHALPlugin
-from ovos_utils.sound import play_audio
 from ovos_utils.system import find_executable, is_process_running
 
 
@@ -29,7 +28,6 @@ class PulseAudioVolumeControlPlugin(PHALPlugin):
         super().__init__(bus=bus, name="ovos-PHAL-plugin-pulseaudio", config=config)
         self.settings = JsonConfigXDG(self.name, subfolder="OpenVoiceOS")
         self.pulseaudio = PulseAudio()
-        self.volume_sound = join(dirname(__file__), "blop-mark-diangelo.wav")
         self.bus.on("mycroft.volume.get", self.handle_volume_request)
         self.bus.on("mycroft.volume.set", self.handle_volume_change)
         self.bus.on("mycroft.volume.increase", self.handle_volume_increase)
@@ -52,32 +50,39 @@ class PulseAudioVolumeControlPlugin(PHALPlugin):
     def get_volume(self):
         return self.pulseaudio.get_volume_percent()
 
-    def set_volume(self, percent=None, set_by_gui=False):
+    def set_volume(self, percent=None,
+                         set_by_gui=False,
+                         play_sound=True):
         volume = int(percent)
         volume = min(100, volume)
         volume = max(0, volume)
         self.pulseaudio.set_volume_percent(volume)
-        play_audio(self.volume_sound)
+        if play_sound:
+            self.bus.emit(Message("mycroft.audio.play_sound", {"uri": "snd/blop-mark-diangelo.wav"}))
         # report change to GUI
         if not set_by_gui:
             percent = volume / 100
             self.handle_volume_request(
                 Message("mycroft.volume.get", {"percent": percent}))
 
-    def increase_volume(self, volume_change=None):
+    def increase_volume(self, volume_change=None,
+                              play_sound=True):
         if not volume_change:
             volume_change = 15
         self.pulseaudio.increase_volume(volume_change)
-        play_audio(self.volume_sound)
+        if play_sound:
+            self.bus.emit(Message("mycroft.audio.play_sound", {"uri": "snd/blop-mark-diangelo.wav"}))
         self.handle_volume_request(Message("mycroft.volume.get"))
 
-    def decrease_volume(self, volume_change=None):
+    def decrease_volume(self, volume_change=None,
+                              play_sound=True):
         if not volume_change:
             volume_change = -15
         if volume_change > 0:
             volume_change = 0 - volume_change
         self.pulseaudio.increase_volume(volume_change)
-        play_audio(self.volume_sound)
+        if play_sound:
+            self.bus.emit(Message("mycroft.audio.play_sound", {"uri": "snd/blop-mark-diangelo.wav"}))
         self.handle_volume_request(Message("mycroft.volume.get"))
 
     def handle_mute_request(self, message):
@@ -104,19 +109,27 @@ class PulseAudioVolumeControlPlugin(PHALPlugin):
 
     def handle_volume_change(self, message):
         percent = message.data["percent"] * 100
-        self.set_volume(percent)
+        play_sound = message.data.get("play_sound", True)
+        assert isinstance(play_sound, bool)
+        self.set_volume(percent, play_sound=play_sound)
 
     def handle_volume_increase(self, message):
         percent = message.data.get("percent", .10) * 100
-        self.increase_volume(percent)
+        play_sound = message.data.get("play_sound", True)
+        assert isinstance(play_sound, bool)
+        self.increase_volume(percent, play_sound)
 
     def handle_volume_decrease(self, message):
         percent = message.data.get("percent", -.10) * 100
-        self.decrease_volume(percent)
+        play_sound = message.data.get("play_sound", True)
+        assert isinstance(play_sound, bool)
+        self.decrease_volume(percent, play_sound)
 
     def handle_volume_change_gui(self, message):
         percent = message.data["percent"] * 100
-        self.set_volume(percent, set_by_gui=True)
+        play_sound = message.data.get("play_sound", True)
+        assert isinstance(play_sound, bool)
+        self.set_volume(percent, set_by_gui=True, play_sound=play_sound)
 
     def shutdown(self):
         self.bus.remove("mycroft.volume.get", self.handle_volume_request)
