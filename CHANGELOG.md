@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/HEAD)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.3a1...HEAD)
+
+**Implemented enhancements:**
+
+- optional volume sound \(inc/dec/change\) [\#1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/1) ([emphasize](https://github.com/emphasize))
+
+## [V0.0.3a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.3a1) (2023-06-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.2...V0.0.3a1)
+
 ## [V0.0.2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.2) (2023-02-24)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.2a1...V0.0.2)
