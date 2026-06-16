@@ -1,8 +1,24 @@
 # Changelog
 
-## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/HEAD)
+## [0.0.3a3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/0.0.3a3) (2026-06-16)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.3a1...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.3a2...0.0.3a3)
+
+**Merged pull requests:**
+
+- chore: add missing shared CI workflows [\#12](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/12) ([JarbasAl](https://github.com/JarbasAl))
+- Update stefanzweifel/git-auto-commit-action action to v7 [\#11](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/11) ([renovate[bot]](https://github.com/apps/renovate))
+- Update pilosus/action-pip-license-checker action to v3 [\#10](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/10) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency ovos-plugin-manager to v2 [\#9](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/9) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/setup-python action to v6 [\#8](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/8) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v6 [\#7](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/7) ([renovate[bot]](https://github.com/apps/renovate))
+- Update heinrichreimer/github-changelog-generator-action action to v2.4 [\#4](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/4) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency python to 3.14 [\#3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/3) ([renovate[bot]](https://github.com/apps/renovate))
+- Configure Renovate [\#2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/2) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [V0.0.3a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.3a2) (2023-09-26)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.3a1...V0.0.3a2)
 
 **Implemented enhancements:**
 
@@ -11,14 +27,6 @@
 ## [V0.0.3a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.3a1) (2023-06-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.2...V0.0.3a1)
-
-## [V0.0.2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.2) (2023-02-24)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/V0.0.2a1...V0.0.2)
-
-## [V0.0.2a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/V0.0.2a1) (2023-02-24)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/dd5fc0e4279a68664fa0e01a9c9658255920a66e...V0.0.2a1)
 
 
 
