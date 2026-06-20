@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.5a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/0.0.5a1) (2026-06-20)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/0.0.4a1...0.0.5a1)
+
+**Merged pull requests:**
+
+- fix: allow json-database 1.x [\#16](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/pull/16) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.4a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/tree/0.0.4a1) (2026-06-16)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-pulseaudio/compare/0.0.3a3...0.0.4a1)
