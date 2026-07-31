@@ -1,2 +1,0 @@
-ovos-plugin-manager~=0.0
-json_database~=0.7
